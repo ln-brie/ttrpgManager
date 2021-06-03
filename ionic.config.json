@@ -1,0 +1,7 @@
+{
+  "name": "ttrpgManagement",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
