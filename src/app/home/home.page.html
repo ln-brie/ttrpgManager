@@ -1,21 +1,23 @@
 <ion-header [translucent]="true">
   <ion-toolbar color="primary">
-<img [src]="infos.photo" alt="bannière">
+    <ion-title class="ion-text-center titre" size="large" color="secondary">
+      <img [src]="infos.logo" alt="logo" height="20px">
+      TTRPG Manager
+    </ion-title>
+    <ion-text color="dark" class="subtitle">
+      <p>Préparez vos parties</p>
+      <p>Gérez vos personnages</p>
+      <p>Suivez l'avancée du scénario</p>
+    </ion-text>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-card class="ion-text-center">
+    <ion-card-content color='light'>
+      <ion-button expand="block" color="light">Ajouter une partie</ion-button>
+    </ion-card-content>
 
   </ion-card>
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <!--liste des parties et liens vers le détail-->
 </ion-content>

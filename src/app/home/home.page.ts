@@ -8,7 +8,8 @@ import { Component } from '@angular/core';
 export class HomePage {
   infos = {
     name : 'TTRPG Manager',
-    photo : './assets/img/ttrpgBan.png'
+    photo : './assets/img/ttrpgBan.png',
+    logo : './assets/img/logo.png'
   };
 
   constructor() {}

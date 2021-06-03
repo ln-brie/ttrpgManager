@@ -25,3 +25,19 @@
 #container a {
   text-decoration: none;
 }
+
+.titre {
+  margin-top: 0.5em;
+}
+
+.subtitle p {
+  font-size: small;
+  text-align: center;
+  margin: 0;
+}
+ .subtitle :first-child {
+   margin-top: 1em;
+ }
+ .subtitle :last-child {
+   margin-bottom: 1em;
+ }
