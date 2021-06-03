@@ -1,14 +1,8 @@
 <ion-header [translucent]="true">
-  <ion-toolbar color="primary">
-    <ion-title class="ion-text-center titre" size="large" color="secondary">
-      <img [src]="infos.logo" alt="logo" height="20px">
-      TTRPG Manager
+  <ion-toolbar text-center color="primary">
+    <ion-title class="ion-text-center titre" color="dark">
+      <img object-fit: cover src="./assets/img/ttrpgBan.png">
     </ion-title>
-    <ion-text color="dark" class="subtitle">
-      <p>Préparez vos parties</p>
-      <p>Gérez vos personnages</p>
-      <p>Suivez l'avancée du scénario</p>
-    </ion-text>
   </ion-toolbar>
 </ion-header>
 
@@ -21,3 +15,12 @@
   </ion-card>
   <!--liste des parties et liens vers le détail-->
 </ion-content>
+
+<ion-tabs>
+  <ion-tab-bar slot="bottom" color="primary">
+    <ion-tab-button tab="parties" [routerLink]="'/parties'">
+      <ion-icon name="dice-outline"></ion-icon>
+      <ion-label>Parties en cours</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

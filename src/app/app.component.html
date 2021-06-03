@@ -1,3 +1,22 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-menu contentId="my-content">
+    <ion-header>
+      <ion-toolbar color="tertiary">
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-menu-toggle *ngFor="let links of menu">
+          <ion-item [routerDirection]="'root'" [routerLink]="[links.url]">
+            <ion-label>
+              {{links.title}}
+            </ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <!--liens-->
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="my-content"></ion-router-outlet>
 </ion-app>
