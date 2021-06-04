@@ -1,23 +1,37 @@
-import { Injectable } from "@angular/core";
-import { Partie } from "src/app/models/partie.model";
+import { Injectable } from '@angular/core';
+import { Partie } from 'src/app/models/partie.model';
+import { Storage } from '@capacitor/storage';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class PartiesService {
-  private parties: Array<Partie> = [
-    { title : 'D&D5', scenario : 'La Malédiction de Strahd'},
-    { title : 'Barbarians of Lemuria', scenario : 'Le Dieu Voilé'},
-    { title : 'Call of Cthulhu', scenario : 'Les Masques de Nyarlathotep'}
-  ];
+  private parties: Array<Partie>;
+  private partieSelected: any;
 
-getPartie() {
-  return this.parties;
+async getPartie(): Promise<Partie[]> {
+  return Storage.get({key: 'parties'}).then(data => {
+    this.parties = data.value != null ? JSON.parse(data.value) : [];
+    return this.parties;
+  });
 }
 
-addPartie(partie : Partie) {
-  this.parties.push(partie);
-}
+async addPartie(partie: Partie) {
+    this.parties.push(partie);
+    await Storage.set({
+      key: 'parties',
+      value: JSON.stringify(this.parties)
+    });
+  }
+
+  definePartie(partie: any) {
+    this.partieSelected = partie;
+  }
+
+  getPartieSelected() {
+    return this.partieSelected;
+  }
 
 }
 

@@ -15,6 +15,14 @@ const routes: Routes = [
     path: 'parties',
     loadChildren: () => import('./parties/parties.module').then( m => m.PartiesPageModule)
   },
+  {
+    path: 'new-partie',
+    loadChildren: () => import('./new-partie/new-partie.module').then( m => m.NewPartiePageModule)
+  },
+  {
+    path: 'details-partie',
+    loadChildren: () => import('./details-partie/details-partie.module').then( m => m.DetailsPartiePageModule)
+  },
 ];
 
 @NgModule({

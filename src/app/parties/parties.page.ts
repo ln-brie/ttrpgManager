@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
 import { Partie } from '../models/partie.model';
 import { PartiesService } from '../services/parties/parties.service';
+
 
 @Component({
   selector: 'app-parties',
@@ -10,11 +12,19 @@ import { PartiesService } from '../services/parties/parties.service';
 export class PartiesPage implements OnInit {
   parties: Array<Partie>;
 
-  constructor(public partiesService: PartiesService) { }
+  constructor(
+    public partiesService: PartiesService,
+    private navCtrl: NavController
+    ) { }
 
-  ionViewWillEnter() {
-    this.parties = this.partiesService.getPartie();
+  async ionViewWillEnter() {
+    this.parties = await this.partiesService.getPartie();
     console.log(this.parties);
+  }
+
+  clickPartie(partie: any) {
+    this.partiesService.definePartie(partie);
+    this.navCtrl.navigateForward('/details-partie');
   }
 
   ngOnInit() {
