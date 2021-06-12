@@ -1,3 +1,4 @@
+import { Storage } from '@capacitor/storage';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -14,7 +15,9 @@ export class HomePage {
     logo : './assets/img/logo.png'
   };
 
-  constructor(public route: Router) {}
+  constructor(
+    public route: Router) {
+  }
 
   addPartie() {
     this.route.navigate(['/new-partie']);

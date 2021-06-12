@@ -1,5 +1,5 @@
 export class Perso {
-  nom : string;
-  joueureuse : string;
-  notes ?: string[];
+  nom: string;
+  joueureuse: string;
+  notes?: string[];
 }

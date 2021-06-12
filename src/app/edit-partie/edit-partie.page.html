@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Modifier {{ partieModif.scenario }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form #editForm="ngForm" (ngSubmit)="editPartie()">
+    <ion-item>
+      <ion-input type="text" name="title" [(ngModel)]="partieModif.title" required placeholder="Nom du jeu (DD5, Pathfinder...)"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" name="scenario" [(ngModel)]="partieModif.scenario" required placeholder="Titre du scénario"></ion-input>
+    </ion-item>
+    <ion-button type="submit" expand="block" [disabled]="!editForm.valid"> Enregistrer </ion-button>
+  </form>
+
+</ion-content>

@@ -23,6 +23,10 @@ const routes: Routes = [
     path: 'details-partie',
     loadChildren: () => import('./details-partie/details-partie.module').then( m => m.DetailsPartiePageModule)
   },
+  {
+    path: 'edit-partie',
+    loadChildren: () => import('./edit-partie/edit-partie.module').then( m => m.EditPartiePageModule)
+  },
 ];
 
 @NgModule({

@@ -33,6 +33,32 @@ async addPartie(partie: Partie) {
     return this.partieSelected;
   }
 
+  async storeParties() {
+    return await Storage.set({
+      key: 'parties',
+      value: JSON.stringify(this.parties)
+    });
+  }
+
+  deletePartie(datePartie: number) {
+    this.parties = this.parties.filter(element=> element.creatingDate !== datePartie);
+    this.storeParties();
+  }
+
+  editPartie(updatedPartie: Partie) {
+    for (let partie of this.parties) {
+      if (partie.creatingDate === updatedPartie.creatingDate) {
+        partie = updatedPartie;
+        break;
+      }
+    }
+    this.partieSelected = updatedPartie;
+    this.storeParties();
+
+  }
+
+
+
 }
 
 
