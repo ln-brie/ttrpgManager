@@ -19,6 +19,8 @@ export class NewPartiePage implements OnInit {
   }
 
   addPartie(partie: Partie) {
+    partie.pj = [];
+    partie.etapes = [];
     partie.creatingDate = new Date().getTime();
     this.partiesService.addPartie(partie);
     this.navCtrl.navigateBack('/parties');

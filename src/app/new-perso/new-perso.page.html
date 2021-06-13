@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Ajouter un personnage</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form #addPersoForm="ngForm" (ngSubmit)="addPerso(addPersoForm.value)">
+    <ion-item>
+      <ion-input type="text" name="nom" ngModel required placeholder="Nom du personnage"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" name="joueureuse" ngModel required placeholder="Nom du joueur ou de la joueuse"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" name="notes" ngModel placeholder="Notes"></ion-input>
+    </ion-item>
+      <ion-button type="submit" expand="block" [disabled]="!addPersoForm.valid" color="light">Ajouter le personnage</ion-button>
+  </form>
+
+
+</ion-content>

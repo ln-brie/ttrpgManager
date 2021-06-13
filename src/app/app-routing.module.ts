@@ -27,6 +27,10 @@ const routes: Routes = [
     path: 'edit-partie',
     loadChildren: () => import('./edit-partie/edit-partie.module').then( m => m.EditPartiePageModule)
   },
+  {
+    path: 'new-perso',
+    loadChildren: () => import('./new-perso/new-perso.module').then( m => m.NewPersoPageModule)
+  },
 ];
 
 @NgModule({

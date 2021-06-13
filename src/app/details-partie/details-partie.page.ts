@@ -28,6 +28,11 @@ export class DetailsPartiePage implements OnInit {
     this.navCtrl.navigateForward('/edit-partie');
   }
 
+  addPerso() {
+    this.partiesService.getPartieSelected();
+    this.navCtrl.navigateForward('/new-perso');
+  }
+
   async supprimerPartie(date: number) {
     const alert = await this.alertCtrl.create({
       header: 'Suppression',

@@ -54,7 +54,6 @@ async addPartie(partie: Partie) {
     }
     this.partieSelected = updatedPartie;
     this.storeParties();
-
   }
 
 

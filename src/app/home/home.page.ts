@@ -1,4 +1,3 @@
-import { Storage } from '@capacitor/storage';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -16,12 +15,8 @@ export class HomePage {
   };
 
   constructor(
-    public route: Router) {
-  }
-
-  addPartie() {
-    this.route.navigate(['/new-partie']);
-
+    public route: Router
+    ) {
   }
 
 }

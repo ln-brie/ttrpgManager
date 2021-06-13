@@ -1,10 +1,15 @@
-import { Perso } from './perso.model';
-
 export class Partie {
   title: string;
   scenario: string;
-  etapes?: string[];
-  pj?: Perso[];
+  etapes?: {
+    description: string;
+    fait: boolean;
+  }[];
+  pj?: {
+    nom: string;
+    joueureuse: string;
+    notes?: string;
+  }[];
   date?: string;
   creatingDate: number;
 }
