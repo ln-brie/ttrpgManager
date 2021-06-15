@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Ajouter une étape</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form #addStepForm="ngForm" (ngSubmit)="addStep(addStepForm.value)">
+    <ion-item>
+      <ion-textarea ngModel name="description" required placeholder="Description de l'étape" rows="10"></ion-textarea>
+    </ion-item>
+    <ion-button color="light" expand="block" type="submit" [disabled]="!addStepForm.valid">Ajouter</ion-button>
+  </form>
+
+</ion-content>

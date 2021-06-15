@@ -4,11 +4,13 @@ export class Partie {
   etapes?: {
     description: string;
     fait: boolean;
+    date: number;
   }[];
   pj?: {
     nom: string;
     joueureuse: string;
     notes?: string;
+    date: number;
   }[];
   date?: string;
   creatingDate: number;

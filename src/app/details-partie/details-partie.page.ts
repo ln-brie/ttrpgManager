@@ -20,7 +20,6 @@ export class DetailsPartiePage implements OnInit {
 
   ngOnInit() {
     this.partie = this.partiesService.getPartieSelected();
-    console.log(this.partie);
   }
 
   editPartie(partie: Partie) {
@@ -31,6 +30,11 @@ export class DetailsPartiePage implements OnInit {
   addPerso() {
     this.partiesService.getPartieSelected();
     this.navCtrl.navigateForward('/new-perso');
+  }
+
+  addStep() {
+    this.partiesService.getPartieSelected();
+    this.navCtrl.navigateForward('/new-step');
   }
 
   async supprimerPartie(date: number) {
@@ -61,6 +65,11 @@ export class DetailsPartiePage implements OnInit {
       duration: 'short',
       position: 'center'
     });
+  }
+
+  goToDetails(perso: any) {
+    this.partiesService.definePerso(perso);
+    this.navCtrl.navigateForward('/details-perso');
   }
 
 }

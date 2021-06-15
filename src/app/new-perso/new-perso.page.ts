@@ -20,8 +20,9 @@ export class NewPersoPage implements OnInit {
     this.partieAvecPerso = this.partiesServices.getPartieSelected();
   }
 
-  addPerso(partie: any) {
-    this.partieAvecPerso.pj.push(partie);
+  addPerso(perso: any) {
+    perso.date = new Date().getTime();
+    this.partieAvecPerso.pj.push(perso);
     this.partiesServices.editPartie(this.partieAvecPerso);
     this.navCtrl.navigateBack('/details-partie');
   }

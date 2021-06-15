@@ -8,7 +8,8 @@ import { Storage } from '@capacitor/storage';
 })
 export class PartiesService {
   private parties: Array<Partie>;
-  private partieSelected: any;
+  private partieSelected: Partie;
+  private persoSelected: any;
 
 async getPartie(): Promise<Partie[]> {
   return Storage.get({key: 'parties'}).then(data => {
@@ -29,8 +30,16 @@ async addPartie(partie: Partie) {
     this.partieSelected = partie;
   }
 
+  definePerso(perso: any) {
+    this.persoSelected = perso;
+  }
+
   getPartieSelected() {
     return this.partieSelected;
+  }
+
+  getPersoSelected() {
+    return this.persoSelected;
   }
 
   async storeParties() {
@@ -54,6 +63,22 @@ async addPartie(partie: Partie) {
     }
     this.partieSelected = updatedPartie;
     this.storeParties();
+  }
+
+  editPerso(updatedPerso: any, partie: Partie) {
+    for (let pj of this.partieSelected.pj) {
+      if (pj.date === updatedPerso.date) {
+        pj = updatedPerso;
+        break;
+      }
+    }
+    this.persoSelected = updatedPerso;
+    this.editPartie(partie);
+  }
+
+  deletePerso(datePerso: number) {
+    this.partieSelected.pj = this.partieSelected.pj.filter(element => element.date !== datePerso);
+    this.editPartie(this.partieSelected);
   }
 
 
