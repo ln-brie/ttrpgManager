@@ -8,7 +8,9 @@ import { Component } from '@angular/core';
 export class AppComponent {
   menu = [
     {title : 'Accueil', url : '/home'},
-    {title : 'Mes parties en cours', url : '/parties'}
+    {title : 'Mes parties en cours', url : '/parties'},
+    {title : 'Mon calendrier', url: '/planning'},
+    {title : 'Piste à dés', url: '/dice'}
   ];
 
   constructor() {}

@@ -1,11 +1,6 @@
 export class Partie {
   title: string;
   scenario: string;
-  etapes?: {
-    description: string;
-    fait: boolean;
-    date: number;
-  }[];
   pj?: {
     nom: string;
     joueureuse: string;
@@ -13,5 +8,6 @@ export class Partie {
     date: number;
   }[];
   date?: string;
+  archive: boolean;
   creatingDate: number;
 }

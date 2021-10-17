@@ -38,24 +38,16 @@
         </ion-item>
       </ion-list>
       <ion-button expand="block" (click)="addPerso()" color="light">Ajouter un personnage</ion-button>
-
-
     </ion-card-content>
   </ion-card>
+
   <ion-card>
-    <ion-card-header>ETAPES</ion-card-header>
+    <ion-card-header>PROCHAINE PARTIE</ion-card-header>
     <ion-card-content>
-      <ion-reorder-group disabled="false">
-        <ion-item *ngFor="let step of partie.etapes">
-          <ion-checkbox name="fait" [(ngModel)]="step.fait" slot="end"></ion-checkbox>
-          <ion-label class="ion-text-wrap">{{ step.description }}</ion-label>
-          <ion-reorder slot="start"></ion-reorder>
-        </ion-item>
-      </ion-reorder-group>
-      <ion-button expand="block" (click)="addStep()" color="light">Ajouter une étape</ion-button>
+      <ion-item>
+        <ion-datetime displayFormat="DDD DD MMMM YYYY à HH:mm" doneText="Valider" cancelText="Annuler" monthNames="[janvier, février, mars, avril, mai, juin, juillet, aout, septembre, octobre, novembre, décembre]" dayShortNames="[Dim, Lun, Mar, Mer, Jeu, Ven, Sam]" placeholder="Définir une date" [(ngModel)]="partie.date" (ionChange)="addDate()"></ion-datetime>
+      </ion-item>
+
     </ion-card-content>
   </ion-card>
-
-
-
 </ion-content>

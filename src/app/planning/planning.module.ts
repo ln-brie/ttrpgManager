@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { NewStepPageRoutingModule } from './new-step-routing.module';
+import { PlanningPageRoutingModule } from './planning-routing.module';
 
-import { NewStepPage } from './new-step.page';
+import { PlanningPage } from './planning.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    NewStepPageRoutingModule
+    PlanningPageRoutingModule
   ],
-  declarations: [NewStepPage]
+  declarations: [PlanningPage]
 })
-export class NewStepPageModule {}
+export class PlanningPageModule {}

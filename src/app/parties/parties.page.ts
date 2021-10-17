@@ -19,7 +19,6 @@ export class PartiesPage implements OnInit {
 
   async ionViewWillEnter() {
     this.parties = await this.partiesService.getPartie();
-    console.log(this.parties);
   }
 
   clickPartie(partie: any) {

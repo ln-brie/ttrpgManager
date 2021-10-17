@@ -81,6 +81,11 @@ async addPartie(partie: Partie) {
     this.editPartie(this.partieSelected);
   }
 
+  editDate(updateDate: any) {
+    this.partieSelected.date = updateDate;
+    this.editPartie(this.partieSelected);
+  }
+
 
 
 }

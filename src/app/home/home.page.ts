@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { Storage } from '@capacitor/storage';
 
 @Component({
   selector: 'app-home',
@@ -15,8 +16,9 @@ export class HomePage {
   };
 
   constructor(
-    public route: Router
+    public route: Router,
     ) {
+      //Storage.clear();
   }
 
 }

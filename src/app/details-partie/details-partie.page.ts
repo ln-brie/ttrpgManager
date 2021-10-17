@@ -72,4 +72,8 @@ export class DetailsPartiePage implements OnInit {
     this.navCtrl.navigateForward('/details-perso');
   }
 
+  addDate() {
+    this.partiesService.editDate(this.partie.date);
+  }
+
 }
